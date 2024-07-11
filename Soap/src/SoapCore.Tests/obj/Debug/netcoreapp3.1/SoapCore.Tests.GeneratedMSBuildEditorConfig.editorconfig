@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = SoapCore.Tests
+build_property.ProjectDir = C:\Users\bhara\Source\repos\SoapCore\src\SoapCore.Tests\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

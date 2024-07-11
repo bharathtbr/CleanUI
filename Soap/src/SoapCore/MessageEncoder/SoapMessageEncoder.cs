@@ -1,0 +1,287 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.IO.Pipelines;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+
+namespace SoapCore.MessageEncoder
+{
+	public class SoapMessageEncoder
+	{
+		internal const string Soap11MediaType = "text/xml";
+		internal const string Soap12MediaType = "application/soap+xml";
+		private const string XmlMediaType = "application/xml";
+
+		private readonly Encoding _writeEncoding;
+		private readonly bool _optimizeWriteForUtf8;
+		private readonly bool _omitXmlDeclaration;
+		private readonly bool _indentXml;
+		private readonly bool _supportXmlDictionaryReader;
+
+		public SoapMessageEncoder(MessageVersion version, Encoding writeEncoding, XmlDictionaryReaderQuotas quotas, bool omitXmlDeclaration, bool indentXml)
+		{
+			_indentXml = indentXml;
+			_omitXmlDeclaration = omitXmlDeclaration;
+			if (writeEncoding == null)
+			{
+				throw new ArgumentNullException(nameof(writeEncoding));
+			}
+
+			_supportXmlDictionaryReader = SoapMessageEncoderDefaults.TryValidateEncoding(writeEncoding, out _);
+
+			_writeEncoding = writeEncoding;
+			_optimizeWriteForUtf8 = IsUtf8Encoding(writeEncoding);
+
+			MessageVersion = version ?? throw new ArgumentNullException(nameof(version));
+
+			ReaderQuotas = new XmlDictionaryReaderQuotas();
+			(quotas ?? XmlDictionaryReaderQuotas.Max).CopyTo(ReaderQuotas);
+
+			MediaType = GetMediaType(version);
+			CharSet = SoapMessageEncoderDefaults.EncodingToCharSet(writeEncoding);
+			ContentType = GetContentType(MediaType, CharSet);
+		}
+
+		public string ContentType { get; }
+
+		public string MediaType { get; }
+
+		public string CharSet { get; }
+
+		public MessageVersion MessageVersion { get; }
+
+		public XmlDictionaryReaderQuotas ReaderQuotas { get; }
+
+		public bool IsContentTypeSupported(string contentType, bool checkCharset)
+		{
+			if (contentType == null)
+			{
+				throw new ArgumentNullException(nameof(contentType));
+			}
+
+			if (IsContentTypeSupported(contentType, ContentType, MediaType, checkCharset))
+			{
+				return true;
+			}
+
+			// we support a few extra content types for "none"
+			if (MessageVersion.Equals(MessageVersion.None))
+			{
+				const string rss1MediaType = "text/xml";
+				const string rss2MediaType = "application/rss+xml";
+				const string atomMediaType = "application/atom+xml";
+				const string htmlMediaType = "text/html";
+
+				if (IsContentTypeSupported(contentType, rss1MediaType, rss1MediaType, checkCharset))
+				{
+					return true;
+				}
+
+				if (IsContentTypeSupported(contentType, rss2MediaType, rss2MediaType, checkCharset))
+				{
+					return true;
+				}
+
+				if (IsContentTypeSupported(contentType, htmlMediaType, atomMediaType, checkCharset))
+				{
+					return true;
+				}
+
+				if (IsContentTypeSupported(contentType, atomMediaType, atomMediaType, checkCharset))
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		public async Task<Message> ReadMessageAsync(PipeReader pipeReader, int maxSizeOfHeaders, string contentType)
+		{
+			if (pipeReader == null)
+			{
+				throw new ArgumentNullException(nameof(pipeReader));
+			}
+
+			using var stream = pipeReader.AsStream(true);
+			return await ReadMessageAsync(stream, maxSizeOfHeaders, contentType);
+		}
+
+		public Task<Message> ReadMessageAsync(Stream stream, int maxSizeOfHeaders, string contentType)
+		{
+			if (stream == null)
+			{
+				throw new ArgumentNullException(nameof(stream));
+			}
+
+			XmlReader reader = _supportXmlDictionaryReader ?
+			 	XmlDictionaryReader.CreateTextReader(stream, _writeEncoding, ReaderQuotas, dictionaryReader => { }) :
+				XmlReader.Create(stream, new XmlReaderSettings());
+
+			Message message = Message.CreateMessage(reader, maxSizeOfHeaders, MessageVersion);
+
+			return Task.FromResult(message);
+		}
+
+		public virtual async Task WriteMessageAsync(Message message, PipeWriter pipeWriter)
+		{
+			if (message == null)
+			{
+				throw new ArgumentNullException(nameof(message));
+			}
+
+			if (pipeWriter == null)
+			{
+				throw new ArgumentNullException(nameof(pipeWriter));
+			}
+
+			ThrowIfMismatchedMessageVersion(message);
+
+			using var xmlTextWriter = XmlWriter.Create(pipeWriter.AsStream(true), new XmlWriterSettings
+			{
+				OmitXmlDeclaration = _optimizeWriteForUtf8 && _omitXmlDeclaration, //can only omit if utf-8
+				Indent = _indentXml,
+				Encoding = _writeEncoding,
+				CloseOutput = true
+			});
+
+			using var xmlWriter = XmlDictionaryWriter.CreateDictionaryWriter(xmlTextWriter);
+			message.WriteMessage(xmlWriter);
+			xmlWriter.WriteEndDocument();
+			xmlWriter.Flush();
+
+			await pipeWriter.FlushAsync();
+		}
+
+		public virtual Task WriteMessageAsync(Message message, Stream stream)
+		{
+			if (message == null)
+			{
+				throw new ArgumentNullException(nameof(message));
+			}
+
+			if (stream == null)
+			{
+				throw new ArgumentNullException(nameof(stream));
+			}
+
+			ThrowIfMismatchedMessageVersion(message);
+
+			using var xmlTextWriter = XmlWriter.Create(stream, new XmlWriterSettings
+			{
+				OmitXmlDeclaration = _optimizeWriteForUtf8 && _omitXmlDeclaration, //can only omit if utf-8,
+				Indent = _indentXml,
+				Encoding = _writeEncoding,
+				CloseOutput = false
+			});
+
+			using var xmlWriter = XmlDictionaryWriter.CreateDictionaryWriter(xmlTextWriter);
+			message.WriteMessage(xmlWriter);
+			xmlWriter.WriteEndDocument();
+			xmlWriter.Flush();
+
+			return Task.CompletedTask;
+		}
+
+		internal static string GetMediaType(MessageVersion version)
+		{
+			string mediaType;
+
+			if (version.Envelope == EnvelopeVersion.Soap12)
+			{
+				mediaType = Soap12MediaType;
+			}
+			else if (version.Envelope == EnvelopeVersion.Soap11)
+			{
+				mediaType = Soap11MediaType;
+			}
+			else if (version.Envelope == EnvelopeVersion.None)
+			{
+				mediaType = XmlMediaType;
+			}
+			else
+			{
+				throw new InvalidOperationException($"Envelope Version '{version.Envelope}' is not supported.");
+			}
+
+			return mediaType;
+		}
+
+		internal static string GetContentType(string mediaType, string charSet)
+		{
+			return string.Format(CultureInfo.InvariantCulture, "{0}; charset={1}", mediaType, charSet);
+		}
+
+		internal bool IsContentTypeSupported(string contentType, string supportedContentType, string supportedMediaType, bool checkCharset)
+		{
+			if (supportedContentType == contentType)
+			{
+				return true;
+			}
+
+			MediaTypeHeaderValue parsedContentType = null;
+
+			try
+			{
+				parsedContentType = MediaTypeHeaderValue.Parse(contentType);
+			}
+			catch (FormatException)
+			{
+				//bad format
+				return false;
+			}
+
+			if (parsedContentType.MediaType.Equals(MediaType, StringComparison.OrdinalIgnoreCase))
+			{
+				if (!checkCharset || string.IsNullOrWhiteSpace(parsedContentType.CharSet) || parsedContentType.CharSet.Equals(CharSet, StringComparison.OrdinalIgnoreCase))
+				{
+					return true;
+				}
+			}
+
+			// sometimes we get a contentType that has parameters, but our encoders
+			// merely expose the base content-type, so we will check a stripped version
+			if (supportedMediaType.Length > 0 && !supportedMediaType.Equals(parsedContentType.MediaType, StringComparison.OrdinalIgnoreCase))
+			{
+				return false;
+			}
+
+			if (!IsCharSetSupported(parsedContentType.CharSet))
+			{
+				return false;
+			}
+
+			return true;
+		}
+
+		internal virtual bool IsCharSetSupported(string charset)
+		{
+			return CharSet?.Equals(charset, StringComparison.OrdinalIgnoreCase)
+			       ?? false;
+		}
+
+		private static bool IsUtf8Encoding(Encoding encoding)
+		{
+			return encoding.WebName == "utf-8";
+		}
+
+		private void ThrowIfMismatchedMessageVersion(Message message)
+		{
+			if (!message.Version.Equals(MessageVersion))
+			{
+				throw new InvalidOperationException($"Message version {message.Version.Envelope} doesn't match encoder version {message.Version.Envelope}");
+			}
+		}
+	}
+}

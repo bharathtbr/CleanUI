@@ -1,0 +1,13 @@
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\bin\Debug\netstandard2.0\SoapCore.deps.json
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\bin\Debug\netstandard2.0\SoapCore.dll
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\bin\Debug\netstandard2.0\SoapCore.pdb
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\bin\Debug\netstandard2.0\SoapCore.xml
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.csproj.AssemblyReference.cache
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.AssemblyInfoInputs.cache
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.AssemblyInfo.cs
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.csproj.CoreCompileInputs.cache
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.sourcelink.json
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.dll
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.xml
+C:\Users\bhara\Source\repos\SoapCore\src\SoapCore\obj\Debug\netstandard2.0\SoapCore.pdb
