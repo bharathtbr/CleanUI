@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9395150F-744F-4B2A-8F03-B0C62B723E5B}|Server\\Server.csproj|c:\\users\\bhara\\source\\repos\\soapcore\\samples\\server\\sampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395150F-744F-4B2A-8F03-B0C62B723E5B}|Server\\Server.csproj|solutionrelative:server\\sampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395150F-744F-4B2A-8F03-B0C62B723E5B}|Server\\Server.csproj|c:\\users\\bhara\\source\\repos\\soapcore\\samples\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395150F-744F-4B2A-8F03-B0C62B723E5B}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF0AC9A-391D-475D-BDE7-F54271C39886}|Models\\Models.csproj|c:\\users\\bhara\\source\\repos\\soapcore\\samples\\models\\isampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF0AC9A-391D-475D-BDE7-F54271C39886}|Models\\Models.csproj|solutionrelative:models\\isampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SampleService.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\Server\\SampleService.cs",
+              "RelativeDocumentMoniker": "Server\\SampleService.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\Server\\SampleService.cs",
+              "RelativeToolTip": "Server\\SampleService.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAjwCsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T12:54:14.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T12:54:11.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ISampleService.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\Models\\ISampleService.cs",
+              "RelativeDocumentMoniker": "Models\\ISampleService.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\SoapCore\\samples\\Models\\ISampleService.cs",
+              "RelativeToolTip": "Models\\ISampleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:38:59.541Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

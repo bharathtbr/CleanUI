@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bhara\\Source\\repos\\BlazorApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D454B6FA-26BD-428E-B69C-9459E4BE7C53}|POCAPI\\POCAPI.csproj|c:\\users\\bhara\\source\\repos\\blazorapp1\\pocapi\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D454B6FA-26BD-428E-B69C-9459E4BE7C53}|POCAPI\\POCAPI.csproj|solutionrelative:pocapi\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\BlazorApp1\\POCAPI\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "POCAPI\\Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\BlazorApp1\\POCAPI\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "POCAPI\\Controllers\\MessagesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T00:22:26.878Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

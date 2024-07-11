@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC_CleanUI", "POC_CleanUI\POC_CleanUI.csproj", "{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BEA57FA-1B14-40C4-9272-CD52F3F8BB3F}
+	EndGlobalSection
+EndGlobal

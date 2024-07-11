@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\websocketmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\websocketmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\soapserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\soapserviceclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\wwwroot\\js\\websocket.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\wwwroot\\js\\websocket.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\pages\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|c:\\users\\bhara\\source\\repos\\poc_cleanui\\poc_cleanui\\isampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C7282B-933C-4097-9CC1-BFCC33C0E6A1}|POC_CleanUI\\POC_CleanUI.csproj|solutionrelative:poc_cleanui\\isampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Pages\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "POC_CleanUI\\Pages\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Pages\\_Layout.cshtml",
+              "RelativeToolTip": "POC_CleanUI\\Pages\\_Layout.cshtml",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwB4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T02:42:39.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Host.cshtml",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Pages\\_Host.cshtml",
+              "RelativeDocumentMoniker": "POC_CleanUI\\Pages\\_Host.cshtml",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Pages\\_Host.cshtml",
+              "RelativeToolTip": "POC_CleanUI\\Pages\\_Host.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T02:42:29.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Program.cs",
+              "RelativeDocumentMoniker": "POC_CleanUI\\Program.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Program.cs",
+              "RelativeToolTip": "POC_CleanUI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:41:21.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "POC_CleanUI\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\Pages\\Index.razor",
+              "RelativeToolTip": "POC_CleanUI\\Pages\\Index.razor",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T02:40:54.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISampleService.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\ISampleService.cs",
+              "RelativeDocumentMoniker": "POC_CleanUI\\ISampleService.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\ISampleService.cs",
+              "RelativeToolTip": "POC_CleanUI\\ISampleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:39:36.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SoapServiceClient.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\SoapServiceClient.cs",
+              "RelativeDocumentMoniker": "POC_CleanUI\\SoapServiceClient.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\SoapServiceClient.cs",
+              "RelativeToolTip": "POC_CleanUI\\SoapServiceClient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:37:06.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebSocketMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\WebSocketMiddleware.cs",
+              "RelativeDocumentMoniker": "POC_CleanUI\\WebSocketMiddleware.cs",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\WebSocketMiddleware.cs",
+              "RelativeToolTip": "POC_CleanUI\\WebSocketMiddleware.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T02:36:18.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "websocket.js",
+              "DocumentMoniker": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\wwwroot\\js\\websocket.js",
+              "RelativeDocumentMoniker": "POC_CleanUI\\wwwroot\\js\\websocket.js",
+              "ToolTip": "C:\\Users\\bhara\\Source\\repos\\POC_CleanUI\\POC_CleanUI\\wwwroot\\js\\websocket.js",
+              "RelativeToolTip": "POC_CleanUI\\wwwroot\\js\\websocket.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-11T02:34:23.061Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+﻿@page "/"
+@inject IJSRuntime JS
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<h3>WebSocket Example</h3>
+
+<button @onclick="ConnectWebSocket">Connect</button>
+@* 
+<button @onclick='() => SendMessage("PingComplexModel", "Parameter for PingComplexModel")'>PingComplexModel</button>
+<button @onclick='() => SendMessage("OtherMethod", "Parameter for OtherMethod")'>Ping</button>
+<button @onclick="ConnectSoapWebSocket">Connect SOAP</button>
+<button @onclick="ConnectApiWebSocket">Connect API</button> *@
+<div>
+    <p>Received SOAP message: @receivedSoapMessage</p>    
+</div>
+<div>
+    <h4>Received API messages:</h4>
+    <ul>
+        @foreach (var message in receivedApiMessages)
+        {
+            <li>@message</li>
+        }
+    </ul>
+</div>
+
+@code {
+    private string receivedSoapMessage;
+    private List<string> receivedApiMessages = new List<string>();
+    private IJSObjectReference _webSocket;
+    private bool isWebSocketInitialized = false;
+    private IJSObjectReference webSocketJsModule;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            webSocketJsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/websocket.js");
+        }
+    }
+    private async Task ConnectSoapWebSocket()
+    {
+        await ConnectWebSocket("/ws", "SOAP");
+    }
+
+    private async Task ConnectApiWebSocket()
+    {
+        await ConnectWebSocket("/api/ws", "API");
+    }
+
+    private async Task ConnectWebSocket(string path, string connectionType)
+    {
+        try
+        {
+            if (webSocketJsModule != null)
+            {
+                await webSocketJsModule.InvokeVoidAsync("startWebSocket", DotNetObjectReference.Create(this));
+                Console.WriteLine($"{connectionType} WebSocket connection opened");
+            }
+            else
+            {
+                Console.WriteLine("WebSocket module not loaded.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to connect {connectionType} WebSocket: {ex.Message}");
+        }
+    }
+    private async Task InitializeWebSocket()
+    {
+        try
+        {
+            _webSocket = await JS.InvokeAsync<IJSObjectReference>("startWebSocket", DotNetObjectReference.Create(this));
+            isWebSocketInitialized = true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error initializing WebSocket: {ex.Message}");
+        }
+    }
+
+    private async Task ConnectWebSocket()
+    {
+        if (!isWebSocketInitialized)
+        {
+            await InitializeWebSocket();
+        }
+    }
+
+    private async Task SendMessage(string methodName, string parameter)
+    {
+        if (isWebSocketInitialized)
+        {
+            try
+            {
+                var message = $"{methodName}:{parameter}";
+                await _webSocket.InvokeVoidAsync("sendMessage", message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending message: {ex.Message}");
+            }
+        }
+    }
+
+    [JSInvokable]
+    public void ReceiveMessage(string message)
+    {
+        if (message.StartsWith("SOAP:"))
+        {
+            receivedSoapMessage = message.Substring("SOAP:".Length).Trim();
+        }
+        else 
+        {
+            receivedApiMessages.Add(message);
+        }
+
+        StateHasChanged();
+    }
+}
+
